@@ -4,6 +4,11 @@ var app = express();
 // Needed to parse form data 
 app.use(express.bodyParser()); 
   
+//Statically serve files in these directories
+app.use("/js", express.static(__dirname + '/static/js'));
+app.use("/images", express.static(__dirname + '/static/images'));
+app.use("/css", express.static(__dirname + '/static/css'));  
+
 var loggedIn = false,
     password = 'password';
  
@@ -19,7 +24,7 @@ app.get('/login', function (req, res) {
         res.send("Already logged in.");
     }
     else {
-        res.sendfile(__dirname + '/public/login.html')
+        res.sendfile(__dirname + '/static/login.html')
     }
 });
  
@@ -41,7 +46,7 @@ app.post('/login', function (req, res) {
  
 //Serve a static logout page
 app.get('/logout', function (req, res) {
-        res.sendfile(__dirname + '/public/logout.html');
+        res.sendfile(__dirname + '/static/logout.html');
    });
  
 app.post('/logout', function (req, res) {

@@ -1,8 +1,8 @@
 {
-  "name"        : "easyrtc_server_example",
-  "version"     : "0.1.6",
-  "author"      : "Priologic Software Inc. <info@priologic.com> (http://priologic.com/)",
-  "description" : "Simple EasyRTC server example which includes EasyRTC, Express, and Socket.io",
+  "name"        : "Brainstorm",
+  "version"     : "0.1.1",
+  "author"      : "Sarthak Munshi <sm@sarthakm.me>",
+  "description" : "A WebRTC based interactive whiteboard and video conference utility .",
 
   "private"     : true,
 
@@ -16,7 +16,7 @@
     "socket.io" : "0.9.x"
   },
 
-  "license"     : "BSD2",
+  "license"     : "MIT",
 
   "engines": {
     "node"      : ">=0.8"
