@@ -54,10 +54,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 100;
 }
 
-h1 {
+h1, h2 {
 	text-align: center;
 }
 
+h2:hover {
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+}
 
 .btn {
   display: block;
