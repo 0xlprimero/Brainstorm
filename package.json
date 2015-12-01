@@ -1,24 +1,27 @@
 {
-  "name"        : "Brainstorm",
-  "version"     : "0.1.1",
-  "author"      : "Sarthak Munshi <sm@sarthakm.me>",
-  "description" : "A WebRTC based interactive whiteboard and video conference utility .",
-
-  "private"     : true,
-
+  "name": "brainstorm",
+  "version": "0.0.1",
+  "description": "Collaboration software",
+  "main": "app.js",
   "scripts": {
-    "start"     : "node server.js"
+    "start": "node ./bin/www"
   },
-
-  "dependencies" : {
-    "easyrtc"   : "1.0.x",
-    "express"   : "*",
-    "socket.io" : "0.9.x"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saru95/Brainstorm.git"
   },
-
-  "license"     : "MIT",
-
-  "engines": {
-    "node"      : ">=0.8"
+  "author": "Sarthak Munshi <sarthakmunshi@gmail.com> (http://sarthakm.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saru95/Brainstorm/issues"
+  },
+  "homepage": "https://github.com/saru95/Brainstorm#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "simple-peer": "^5.11.5",
+    "standard": "^5.4.1",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1"
   }
 }
