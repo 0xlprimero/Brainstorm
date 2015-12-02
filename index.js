@@ -1,29 +1,38 @@
 
-navigator.webkitGetUserMedia({ video: true, audio: true}, function(stream) {
-	var Peer = require('simple-peer')
+navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia
 
-	var peer = new Peer({
-		initiator: location.pathname === '/init',
-		trickle: false,
-		stream: stream
-	})
+if(navigator.getUserMedia){
+	navigator.getUserMedia({ video: true, audio: true}, function(stream) {
+		var Peer = require('simple-peer')
 
-	peer.on('signal', function(data) {
-		document.getElementById('myId').value = JSON.stringify(data)
-	})
+		var peer = new Peer({
+			initiator: location.pathname === '/init',
+			trickle: false,
+			stream: stream
+		})
 
-	document.getElementById('connect').addEventListener('click', function () {
-		var peerId = JSON.parse(document.getElementById('peerId').value)
-		peer.signal(peerId)
-	})
+		peer.on('signal', function(data) {
+			document.getElementById('myId').value = JSON.stringify(data)
+		})
 
-	peer.on('stream', function(stream) {
-		var video = document.createElement('video')
-		document.body.appendChild(video)
-		video.src = window.URL.createObjectURL(stream)
-		video.play()
+		document.getElementById('connect').addEventListener('click', function () {
+			var peerId = JSON.parse(document.getElementById('peerId').value)
+			peer.signal(peerId)
+		})
+
+		peer.on('stream', function(stream) {
+			var video = document.createElement('video')
+			document.body.appendChild(video)
+			video.src = window.URL.createObjectURL(stream)
+			video.play()
+		})
+	}, function(err) {
+		console.error(err)
 	})
-}, function(err) {
-	console.error(err)
-})
+}
+else {
+	console.log("WEBRTC IS NOT SUPPORTED !")
+}
 
