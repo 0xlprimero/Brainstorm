@@ -9,7 +9,15 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-  res.render('index')
+  res.render('home')
+})
+
+app.get('/init', function(req, res) {
+	res.render('index')
+})
+
+app.get('/noninit', function(req, res) {
+	res.render('index')
 })
 
 app.use(function(req, res, next) {
