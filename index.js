@@ -27,6 +27,42 @@ if(navigator.getUserMedia){
 			document.body.appendChild(video)
 			video.src = window.URL.createObjectURL(stream)
 			video.play()
+
+
+			var constraints = {
+  				audio: false,
+  				video: true
+			};
+			navigator.getUserMedia(constraints, function(stream2) {
+				var myVideo = document.createElement('video')
+				document.body.appendChild(myVideo)
+				myVideo.src = window.URL.createObjectURL(stream2)
+				myVideo.play()
+			}, function(e) {
+				console.error(e)
+			})
+			
+
+
+
+			/* Whiteboard 
+			websocket.onmessage = function(event) {
+    			CanvasDesigner.syncData( JSON.parse(event.data) );
+			};
+
+			CanvasDesigner.addSyncListener(function(data) {
+    			websocket.send(JSON.stringify(data));
+			});
+
+			CanvasDesigner.setSelected('pencil');
+
+			CanvasDesigner.setTools({
+    			pencil: true,
+    			text: true
+			});
+
+			CanvasDesigner.appendTo(document.body.video);
+			*/
 		})
 	}, function(err) {
 		console.error(err)
