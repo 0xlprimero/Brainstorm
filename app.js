@@ -3,8 +3,7 @@ var path = require('path')
 
 var app = express();
 
-app.listen(process.env.PORT || 3000)
-app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1")
+app.listen(process.env.PORT || 8080)
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
