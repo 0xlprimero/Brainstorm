@@ -6,8 +6,10 @@ Brainstorm is minimalistic collaboration software built over WebRTC . Features i
 
 ```
 git clone https://github.com/saru95/Brainstorm
-cd Brainstorm && npm install
+cd Brainstorm && npm install .
 npm start
 ```
 
 ##Screenshots
+
+![](https://raw.githubusercontent.com/saru95/Brainstorm/master/image.png)
